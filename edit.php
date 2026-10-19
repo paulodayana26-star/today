@@ -22,7 +22,7 @@ if (isset($_POST['update'])) {
             WHERE id=$id";
 
     if (mysqli_query($conn, $sql)) {
-        header("Location: php.php");
+        header("Location: html.php");
         exit;
     } else {
         echo "Error: " . mysqli_error($conn);
@@ -81,7 +81,7 @@ if (!$row) { die("Record not found."); }
                 <input type="checkbox" name="terms" <?= $row['terms'] ? 'checked' : '' ?>> Agree to terms
             </label>
 
-            <button type="submit" name="update">Update</button>
+            <button type="update" name="update">Update</button>
         </form>
         <a href="html.php">← Back to list</a>
     </div>

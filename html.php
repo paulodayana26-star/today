@@ -92,7 +92,7 @@ include("process.php");
 <!-- ============ FORM ============ -->
 <div class="form-container">
     <h2>Job Application Form</h2>
-    <form action="" method="POST">
+    <form action="process.php" method="POST">
 
         <div class="form-group">
             <label for="fullname">Full Name:</label>
@@ -161,9 +161,12 @@ include("process.php");
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                <?php
+                $id = 1; // Initialize ID counter
+        
+                 while ($row = mysqli_fetch_assoc($result)) { ?>
                     <tr>
-                        <td style="border:1px solid #ddd; padding:10px;"><?= htmlspecialchars($row['id']) ?></td>
+                        <td style="border:1px solid #ddd; padding:10px;"><?= $id++?></td>
                         <td style="border:1px solid #ddd; padding:10px;"><?= htmlspecialchars($row['fullname']) ?></td>
                         <td style="border:1px solid #ddd; padding:10px;"><?= htmlspecialchars($row['gender']) ?></td>
                         <td style="border:1px solid #ddd; padding:10px;"><?= htmlspecialchars($row['reg_date']) ?></td>
